@@ -23,16 +23,16 @@ module.exports = (body) => {
       })
       .then((weatherData) => {
         if(weatherData.kind == "thunderstorm" || weatherData.kind == "drizzle" || weatherData.kind == "rain") {
-          const image = "img/004-umbrella.png";
+          const image = "public/img/004-umbrella.png";
           resolve(image);
         } else if(weatherData.kind == "snow") {
-          const image = "img/003-boot.png";
+          const image = "public/img/003-boot.png";
           resolve(image);
         } else if (weatherData.kind == "clear sky") {
           const image = "public/img/002-sunglasses.png";
           resolve(image);
         } else if(weatherData.kind == "cloudy") {
-          const image = "img/001-jacket.png";
+          const image = "public/img/001-jacket.png";
           resolve(image);
         } else {
           reject(new Error("Invalid weather kind"));

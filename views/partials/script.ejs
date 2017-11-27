@@ -1,0 +1,15 @@
+<script>
+	 $(function() {
+	 	$("form").on("submit", function (event) {
+	 		event.preventDefault();
+	 		console.log("Sending AJAX Request");
+      const data = $(this).serialize();
+
+	 		$.post("/api/v1/app", data, function(serverResponse) {
+        console.log("AJAX Request Succeeded");
+        $("body").append(serverResponse);
+			});
+
+	 	})
+	 });
+ 	</script>
